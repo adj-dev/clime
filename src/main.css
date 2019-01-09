@@ -1,0 +1,62 @@
+html,
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* styles for Header component */
+
+.header {
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 1px solid black;
+  height: 90px;
+}
+
+.header > .title {
+  flex: 1;
+  font-size: 2em;
+  align-self: center;
+  padding: 0 10px;
+}
+
+.header > .credit {
+  align-self: flex-end;
+  padding: 0 10px;
+}
+
+/* styles for ForecastCard component */
+
+.container {
+  display: flex;
+}
+
+.card {
+  padding: 30px 60px;
+  margin: 50px auto;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.big-info {
+  display: flex;
+}
+
+.big-info > i {
+  color: rgb(41, 41, 41);
+  font-size: 4em;
+}
+
+.big-info > .temp {
+  font-size: 3em;
+  align-self: center;
+}
+
+.small-info {
+  text-align: center;
+  padding-top: 20px;
+}
