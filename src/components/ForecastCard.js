@@ -1,7 +1,17 @@
 import React from 'react';
 
+import DailyForecast from './DailyForecast';
+
 function ForecastCard({ forecast, iconClass }) {
-  console.log(forecast);
+  // Render loading message while forecast is being fetched
+  if (forecast === null) {
+    return (
+      <div className="container">
+        <div className="card">Getting forecast...</div>
+      </div>
+    );
+  }
+
   const { summary, temperature } = forecast.currently;
   const roundedTemp = Math.round(temperature);
   return (
@@ -15,7 +25,10 @@ function ForecastCard({ forecast, iconClass }) {
           </div>
         </div>
         <div className="small-info">
-          <span>{summary}</span>
+          Currently: <span>{summary}</span>
+        </div>
+        <div className="daily-forecast">
+          <DailyForecast forecast={forecast} />
         </div>
       </div>
     </div>

@@ -9,7 +9,7 @@ import Weather from './Weather';
 function App() {
   return (
     <div>
-      <Header city="Elk River" />
+      <Header />
       <Weather />
     </div>
   );

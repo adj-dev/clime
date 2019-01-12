@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import ForecastCard from './ForecastCard';
+import { setIcon } from '../helpers/setIcon';
 
 class Weather extends Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class Weather extends Component {
         lat: Number,
         lon: Number
       },
-      forecast: {},
+      forecast: null,
       iconClass: String
     };
   }
@@ -34,33 +35,6 @@ class Weather extends Component {
     );
   }
 
-  setIcon(desc) {
-    switch (desc) {
-      case 'clear-day':
-        return 'wi wi-day-sunny';
-      case 'clear-night':
-        return 'wi wi-night-clear';
-      case 'rain':
-        return 'wi wi-rain';
-      case 'snow':
-        return 'wi wi-snow';
-      case 'sleet':
-        return 'wi wi-sleet';
-      case 'wind':
-        return 'wi wi-windy';
-      case 'fog':
-        return 'wi wi-fog';
-      case 'cloudy':
-        return 'wi wi-cloudy';
-      case 'partly-cloudy-day':
-        return 'wi wi-day-cloudy';
-      case 'partly-cloudy-night':
-        return 'wi wi-night-alt-cloudy';
-      default:
-        return 'wi wi-na';
-    }
-  }
-
   fetchWeather() {
     const lat = this.state.userCoords.lat;
     const lon = this.state.userCoords.lon;
@@ -71,22 +45,18 @@ class Weather extends Component {
         this.setState({
           forecast: response.data,
           isLoaded: true,
-          iconClass: this.setIcon(response.data.currently.icon)
+          iconClass: setIcon(response.data.currently.icon)
         })
       );
   }
 
   render() {
-    if (!this.state.isLoaded) {
-      return <div>Finding your location...</div>;
-    } else {
-      return (
-        <ForecastCard
-          forecast={this.state.forecast}
-          iconClass={this.state.iconClass}
-        />
-      );
-    }
+    return (
+      <ForecastCard
+        forecast={this.state.forecast}
+        iconClass={this.state.iconClass}
+      />
+    );
   }
 }
 

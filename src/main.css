@@ -36,7 +36,7 @@ a {
 }
 
 .card {
-  padding: 30px 60px;
+  padding: 30px 10px;
   margin: 50px auto;
   border: 1px solid black;
   border-radius: 8px;
@@ -44,6 +44,7 @@ a {
 
 .big-info {
   display: flex;
+  justify-content: space-evenly;
 }
 
 .big-info > i {
@@ -59,4 +60,32 @@ a {
 .small-info {
   text-align: center;
   padding-top: 20px;
+}
+
+/* styles for DailyForecast component */
+
+.daily-forecast {
+  display: flex;
+  padding-top: 20px;
+}
+
+.daily-row {
+  color: white;
+  flex-direction: row;
+  min-width: 80px;
+  text-align: center;
+  background-color: rgb(63, 63, 63);
+  border-radius: 8px;
+  margin: 0 5px;
+  padding: 10px 0;
+}
+
+.daily-row > .day {
+  font-size: 0.8em;
+}
+
+.daily-row > i {
+  font-size: 2em;
+  padding-top: 5px;
+  padding-bottom: 10px;
 }
