@@ -4,7 +4,7 @@ import DailyForecast from './DailyForecast';
 
 function ForecastCard({ forecast, iconClass }) {
   // Render loading message while forecast is being fetched
-  if (forecast === null) {
+  if (!forecast) {
     return (
       <div className="container">
         <div className="card">Getting forecast...</div>
