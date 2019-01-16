@@ -40,7 +40,7 @@ class Weather extends Component {
     const lon = this.state.userCoords.lon;
 
     axios
-      .get(`/${process.env.REACT_APP_API_KEY}/${lat},${lon}`)
+      .get(`/${process.env.REACT_APP_DARKSKY_KEY}/${lat},${lon}`)
       .then(response =>
         this.setState({
           forecast: response.data,
@@ -51,6 +51,7 @@ class Weather extends Component {
   }
 
   render() {
+    console.log(this.state.forecast);
     return (
       <ForecastCard
         forecast={this.state.forecast}
