@@ -1,9 +1,37 @@
 import React from 'react';
 
-import ForecastCard from './ForecastCard';
+import DailyForecast from './DailyForecast';
 
-function Weather(props) {
-  return <ForecastCard forecast={props.forecast} iconClass={props.iconClass} />;
+function Weather({ forecast, iconClass }) {
+  if (!forecast) {
+    return (
+      <div className="container">
+        <div className="card">Getting forecast...</div>
+      </div>
+    );
+  }
+
+  const { summary, temperature } = forecast.currently;
+  const roundedTemp = Math.round(temperature);
+  return (
+    <div className="container">
+      <div className="card">
+        <div className="big-info">
+          <i className={iconClass} />
+          <div className="temp">
+            {roundedTemp}
+            <i className="wi wi-fahrenheit" />
+          </div>
+        </div>
+        <div className="small-info">
+          Currently: <span>{summary}</span>
+        </div>
+        <div className="daily-forecast">
+          <DailyForecast forecast={forecast} />
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Weather;
