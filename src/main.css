@@ -1,25 +1,40 @@
 html,
 body {
+  height: 100vh;
   margin: 0;
   font-family: 'Sarabun', sans-serif;
+  color: rgb(54, 54, 54);
+  background: #74ebd5; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #acb6e5,
+    #74ebd5
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #acb6e5,
+    #74ebd5
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-a {
+a,
+a:visited {
   text-decoration: none;
+  color: inherit;
 }
 
 /* styles for Header component */
 
 .header {
   display: flex;
-  background-color: rgb(255, 255, 255);
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(50, 50, 50, 0.1);
   height: 90px;
 }
 
 .header > .title {
+  font-family: 'Fredoka One', cursive;
   flex: 1;
-  font-size: 2em;
+  font-size: 2.5em;
   align-self: center;
   padding: 0 10px;
 }
@@ -29,54 +44,77 @@ a {
   padding: 0 10px;
 }
 
-/* styles for ForecastCard component */
+/* styles for Weather component */
 
 .container {
   display: flex;
+  flex-direction: column;
 }
 
-.card {
-  padding: 30px 10px;
+.weather-currently {
+  display: flex;
+  padding: 20px 20px;
   margin: 50px auto;
-  border: 1px solid black;
-  border-radius: 8px;
+  /* border: 1px solid black; */
+  /* border-radius: 8px; */
 }
 
 .big-info {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  width: 50%;
+  padding: 10px 10px;
+  font-weight: 100;
+  letter-spacing: 3px;
+}
+
+.big-info > i,
+.big-info > .temp {
+  padding: 0 8px;
 }
 
 .big-info > i {
-  color: rgb(41, 41, 41);
-  font-size: 4em;
+  font-size: 7em;
 }
 
 .big-info > .temp {
-  font-size: 3em;
-  align-self: center;
+  font-size: 5em;
+}
+
+div.temp > span {
+  padding-top: 20px;
+  font-size: 36px;
+  position: absolute;
 }
 
 .small-info {
-  text-align: center;
-  padding-top: 20px;
+  text-align: right;
+  padding: 10px 30px;
+  width: 500px;
+}
+
+.small-info > h1,
+.small-info > p {
+  margin: 0;
 }
 
 /* styles for DailyForecast component */
 
 .daily-forecast {
   display: flex;
-  padding-top: 20px;
+  padding: 20px 0;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 3px 3px 3px rgba(50, 50, 50, 0.1);
+  justify-content: center;
 }
 
 .daily-row {
-  color: white;
+  color: rgb(80, 80, 80);
   font-weight: 100;
   flex-direction: row;
-  min-width: 80px;
+  min-width: 100px;
   text-align: center;
-  background-color: rgb(63, 63, 63);
-  border-radius: 8px;
+  /* background-color: rgb(63, 63, 63, 0.5); */
   margin: 0 5px;
   padding: 10px 0;
 }
@@ -88,6 +126,7 @@ a {
 }
 
 .daily-row > i {
+  color: rgba(255, 255, 255);
   font-size: 2em;
   padding-top: 5px;
   padding-bottom: 10px;

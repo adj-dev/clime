@@ -18,7 +18,7 @@ function DailyForecast({ forecast }) {
           <span style={{ color: 'orange' }}>
             H {Math.round(data.temperatureHigh)}
           </span>{' '}
-          <span style={{ color: 'lightblue' }}>
+          <span style={{ color: 'dodgerblue' }}>
             L {Math.round(data.temperatureMin)}
           </span>
         </div>

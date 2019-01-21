@@ -68,8 +68,10 @@ class App extends Component {
         }`
       )
       .then(response => {
+        let city = response.data.results[0].address_components[2].long_name;
+        let state = response.data.results[0].address_components[4].short_name;
         this.setState({
-          cityName: response.data.results[0].address_components[2].short_name
+          cityName: `${city}, ${state}`
         });
       });
   }
@@ -77,10 +79,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header cityName={this.state.cityName} />
+        <Header />
         <Weather
           forecast={this.state.forecast}
           iconClass={this.state.iconClass}
+          cityName={this.state.cityName}
         />
       </div>
     );
