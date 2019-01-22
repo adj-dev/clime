@@ -51,15 +51,13 @@ a:visited {
   flex-direction: column;
 }
 
-.weather-currently {
+.big-display {
   display: flex;
-  padding: 20px 20px;
-  margin: 50px auto;
-  /* border: 1px solid black; */
-  /* border-radius: 8px; */
+  padding: 20px;
+  margin: 50px auto 20px auto;
 }
 
-.big-info {
+.icon-temp {
   display: flex;
   justify-content: flex-start;
   width: 50%;
@@ -68,16 +66,16 @@ a:visited {
   letter-spacing: 3px;
 }
 
-.big-info > i,
-.big-info > .temp {
+.icon-temp > i,
+.icon-temp > .temp {
   padding: 0 8px;
 }
 
-.big-info > i {
+.icon-temp > i {
   font-size: 7em;
 }
 
-.big-info > .temp {
+.icon-temp > .temp {
   font-size: 5em;
 }
 
@@ -87,24 +85,40 @@ div.temp > span {
   position: absolute;
 }
 
-.small-info {
+.location-date {
   text-align: right;
-  padding: 10px 30px;
+  padding: 20px 30px;
   width: 500px;
 }
 
-.small-info > h1,
-.small-info > p {
+.location-date > h1,
+.location-date > p {
   margin: 0;
+}
+
+/* styles for weatherDetails component */
+
+.weather-details {
+  display: flex;
+  margin: 5px auto;
+  width: 80%;
+  padding: 0 20px;
+}
+
+.details > h1 {
+  font-weight: 100;
+  margin: 0;
+  letter-spacing: 1px;
 }
 
 /* styles for DailyForecast component */
 
 .daily-forecast {
+  margin-top: 50px;
   display: flex;
   padding: 20px 0;
   background-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 3px 3px 3px rgba(50, 50, 50, 0.1);
+  box-shadow: 0 3px 3px rgba(50, 50, 50, 0.1);
   justify-content: center;
 }
 
@@ -114,7 +128,6 @@ div.temp > span {
   flex-direction: row;
   min-width: 100px;
   text-align: center;
-  /* background-color: rgb(63, 63, 63, 0.5); */
   margin: 0 5px;
   padding: 10px 0;
 }

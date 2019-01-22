@@ -63,9 +63,8 @@ class App extends Component {
   getCityName(lat, lon) {
     axios
       .get(
-        `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lon}&key=${
-          process.env.REACT_APP_MAPS_KEY
-        }`
+        `https://maps.googleapis.com/maps/api/geocode/json?latlng=
+          ${lat},${lon}&key=${process.env.REACT_APP_MAPS_KEY}`
       )
       .then(response => {
         let city = response.data.results[0].address_components[2].long_name;
